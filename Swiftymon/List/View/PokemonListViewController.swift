@@ -43,7 +43,7 @@ class PokemonListViewController: BaseViewController {
 
 extension PokemonListViewController: PokemonListView {
     
-    func addPokemon(items: [PokemonListItem]) {
+    func addPokemon(items: [Pokemon]) {
         let currentCount = pokemonListViewModel.count
         
         pokemonListViewModel.items.append(contentsOf: items)
@@ -92,5 +92,17 @@ extension PokemonListViewController: UITableViewDataSource, UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return pokemonListViewModel.rowHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let url = pokemonListViewModel.items[indexPath.row].url
+        
+        let service = PokemonDetailNetworkService()
+        
+        service.fetchDetails(path: url) { (result) in
+            
+        }
     }
 }

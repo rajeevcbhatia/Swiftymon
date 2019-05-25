@@ -10,7 +10,12 @@ import Foundation
 
 class Networking {
     
-    static func sendRequest(with url: URL, completion: @escaping (Result<Data, ConnectionError>) -> Void) {
+    static func sendRequest(with path: String, completion: @escaping (Result<Data, ConnectionError>) -> Void) {
+        
+        guard let url = URL(string: path) else {
+            completion(.failure(.couldNotGetDetails))
+            return
+        }
         
         let urlSesion = URLSession(configuration: URLSessionConfiguration.default)
         

@@ -11,11 +11,11 @@ import Foundation
 struct PokemonListResponse: Codable {
     let count: Int
     let next: String?
-    let results: [PokemonListItem]
+    let results: [Pokemon]
 }
 
 // MARK: - Result
-struct PokemonListItem: Codable {
+struct Pokemon: Codable {
     let name: String
     let url: String
     

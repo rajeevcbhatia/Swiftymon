@@ -14,12 +14,7 @@ class PokemonListNetworkService: PokemonListService {
         
         let path = path ?? URLBuilder.pokemonSpecies.path
         
-        guard let url = URL(string: path) else {
-            completion(.failure(.couldNotGetDetails))
-            return
-        }
-        
-        Networking.sendRequest(with: url) { (result) in
+        Networking.sendRequest(with: path) { (result) in
             
             guard let responseData = try? result.get(), let pokemonListResponse: PokemonListResponse = Networking.decode(data: responseData) else {
                 completion(.failure(ConnectionError.couldNotGetDetails))

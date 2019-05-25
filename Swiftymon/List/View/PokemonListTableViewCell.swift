@@ -17,7 +17,7 @@ class PokemonListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     
-    var pokemon: PokemonListItem? {
+    var pokemon: Pokemon? {
         didSet {
             guard let pokemon = pokemon else { return }
             pokemonImageView?.sd_setImage(with: URL(string: pokemon.imagePath), completed: nil)

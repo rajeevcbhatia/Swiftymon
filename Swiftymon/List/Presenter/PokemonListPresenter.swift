@@ -24,6 +24,7 @@ class PokemonListPresenter: PokemonListPresentable {
     
     func attach(view: PokemonListView) {
         pokemonListView = view
+        pokemonListView?.showLoader()
         fetchNextPage()
     }
     
@@ -35,6 +36,7 @@ class PokemonListPresenter: PokemonListPresentable {
         shouldNotifyOnSrollToEnd = false
         
         pokemonListService.fetchNextPage(path: nextPagePath) { [weak self] (result) in
+            self?.pokemonListView?.hideLoader()
             guard let response = try? result.get() else {
                 self?.shouldNotifyOnSrollToEnd = true
                 return

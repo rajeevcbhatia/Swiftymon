@@ -9,5 +9,5 @@
 import Foundation
 
 protocol PokemonListView: BaseView {
-    func addPokemon(items: [PokemonListItem])
+    func addPokemon(items: [Pokemon])
 }

@@ -18,6 +18,6 @@ struct PokemonListViewModel {
         return items.count
     }
     
-    var items =  [PokemonListItem]()
+    var items =  [Pokemon]()
     
 }
