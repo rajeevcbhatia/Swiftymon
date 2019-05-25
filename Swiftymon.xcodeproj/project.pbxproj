@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		208F09EFDE9597FC5A392236 /* libPods-SwiftymonUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B27BF7A00FEA5732C904C73 /* libPods-SwiftymonUITests.a */; };
+		55939E9634F075B423835E6E /* Pods_Swiftymon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 618C21CC46BBAFC60F440C3F /* Pods_Swiftymon.framework */; };
+		6B8BAC01F04A67D975920764 /* libPods-SwiftymonTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6229B362364E4E148EE3B471 /* libPods-SwiftymonTests.a */; };
 		9A1DAE2022996DB0008289C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE1F22996DB0008289C2 /* AppDelegate.swift */; };
 		9A1DAE2222996DB0008289C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE2122996DB0008289C2 /* ViewController.swift */; };
 		9A1DAE2522996DB0008289C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1DAE2322996DB0008289C2 /* Main.storyboard */; };
@@ -34,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B27BF7A00FEA5732C904C73 /* libPods-SwiftymonUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftymonUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		396C2288116874244C0EC768 /* Pods-Swiftymon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftymon.debug.xcconfig"; path = "Target Support Files/Pods-Swiftymon/Pods-Swiftymon.debug.xcconfig"; sourceTree = "<group>"; };
+		618C21CC46BBAFC60F440C3F /* Pods_Swiftymon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiftymon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6229B362364E4E148EE3B471 /* libPods-SwiftymonTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftymonTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		653037B3AD26BD8EA2443446 /* Pods-SwiftymonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftymonUITests.release.xcconfig"; path = "Target Support Files/Pods-SwiftymonUITests/Pods-SwiftymonUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7114EB9F95F4DB27AE043E38 /* Pods-SwiftymonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftymonTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftymonTests/Pods-SwiftymonTests.release.xcconfig"; sourceTree = "<group>"; };
 		9A1DAE1C22996DB0008289C2 /* Swiftymon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiftymon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1DAE1F22996DB0008289C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A1DAE2122996DB0008289C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +56,9 @@
 		9A1DAE3B22996DB2008289C2 /* SwiftymonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftymonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1DAE3F22996DB2008289C2 /* SwiftymonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftymonUITests.swift; sourceTree = "<group>"; };
 		9A1DAE4122996DB2008289C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0F41D02C85C93D2D80C364E /* Pods-Swiftymon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftymon.release.xcconfig"; path = "Target Support Files/Pods-Swiftymon/Pods-Swiftymon.release.xcconfig"; sourceTree = "<group>"; };
+		BF3F822C07E3D03B24D09A1E /* Pods-SwiftymonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftymonUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftymonUITests/Pods-SwiftymonUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C14380D1862B6474C5E0962F /* Pods-SwiftymonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftymonTests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftymonTests/Pods-SwiftymonTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55939E9634F075B423835E6E /* Pods_Swiftymon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B8BAC01F04A67D975920764 /* libPods-SwiftymonTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				208F09EFDE9597FC5A392236 /* libPods-SwiftymonUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E8DE701D80685C28D558836 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				396C2288116874244C0EC768 /* Pods-Swiftymon.debug.xcconfig */,
+				B0F41D02C85C93D2D80C364E /* Pods-Swiftymon.release.xcconfig */,
+				C14380D1862B6474C5E0962F /* Pods-SwiftymonTests.debug.xcconfig */,
+				7114EB9F95F4DB27AE043E38 /* Pods-SwiftymonTests.release.xcconfig */,
+				BF3F822C07E3D03B24D09A1E /* Pods-SwiftymonUITests.debug.xcconfig */,
+				653037B3AD26BD8EA2443446 /* Pods-SwiftymonUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9A1DAE1322996DB0008289C2 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +110,8 @@
 				9A1DAE3322996DB2008289C2 /* SwiftymonTests */,
 				9A1DAE3E22996DB2008289C2 /* SwiftymonUITests */,
 				9A1DAE1D22996DB0008289C2 /* Products */,
+				0E8DE701D80685C28D558836 /* Pods */,
+				AC88FA7714AF5DABBC363F2C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +156,16 @@
 			path = SwiftymonUITests;
 			sourceTree = "<group>";
 		};
+		AC88FA7714AF5DABBC363F2C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				618C21CC46BBAFC60F440C3F /* Pods_Swiftymon.framework */,
+				6229B362364E4E148EE3B471 /* libPods-SwiftymonTests.a */,
+				0B27BF7A00FEA5732C904C73 /* libPods-SwiftymonUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A1DAE4422996DB2008289C2 /* Build configuration list for PBXNativeTarget "Swiftymon" */;
 			buildPhases = (
+				9426149AB425DE836D3D13BC /* [CP] Check Pods Manifest.lock */,
 				9A1DAE1822996DB0008289C2 /* Sources */,
 				9A1DAE1922996DB0008289C2 /* Frameworks */,
 				9A1DAE1A22996DB0008289C2 /* Resources */,
+				0E136CF3C3845670D764AAD4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +192,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A1DAE4722996DB2008289C2 /* Build configuration list for PBXNativeTarget "SwiftymonTests" */;
 			buildPhases = (
+				16B49BF07298E9EAFBEDC3A7 /* [CP] Check Pods Manifest.lock */,
 				9A1DAE2C22996DB2008289C2 /* Sources */,
 				9A1DAE2D22996DB2008289C2 /* Frameworks */,
 				9A1DAE2E22996DB2008289C2 /* Resources */,
@@ -167,6 +211,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A1DAE4A22996DB2008289C2 /* Build configuration list for PBXNativeTarget "SwiftymonUITests" */;
 			buildPhases = (
+				88CE8746E555AB3B9E187669 /* [CP] Check Pods Manifest.lock */,
 				9A1DAE3722996DB2008289C2 /* Sources */,
 				9A1DAE3822996DB2008289C2 /* Frameworks */,
 				9A1DAE3922996DB2008289C2 /* Resources */,
@@ -250,6 +295,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E136CF3C3845670D764AAD4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swiftymon/Pods-Swiftymon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swiftymon/Pods-Swiftymon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swiftymon/Pods-Swiftymon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		16B49BF07298E9EAFBEDC3A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftymonTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88CE8746E555AB3B9E187669 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftymonUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9426149AB425DE836D3D13BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Swiftymon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9A1DAE1822996DB0008289C2 /* Sources */ = {
@@ -430,6 +561,7 @@
 		};
 		9A1DAE4522996DB2008289C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 396C2288116874244C0EC768 /* Pods-Swiftymon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -447,6 +579,7 @@
 		};
 		9A1DAE4622996DB2008289C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0F41D02C85C93D2D80C364E /* Pods-Swiftymon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -464,6 +597,7 @@
 		};
 		9A1DAE4822996DB2008289C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C14380D1862B6474C5E0962F /* Pods-SwiftymonTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -484,6 +618,7 @@
 		};
 		9A1DAE4922996DB2008289C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7114EB9F95F4DB27AE043E38 /* Pods-SwiftymonTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -504,6 +639,7 @@
 		};
 		9A1DAE4B22996DB2008289C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF3F822C07E3D03B24D09A1E /* Pods-SwiftymonUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +659,7 @@
 		};
 		9A1DAE4C22996DB2008289C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 653037B3AD26BD8EA2443446 /* Pods-SwiftymonUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
