@@ -10,8 +10,6 @@ import Foundation
 
 protocol PokemonListService {
     
-//    func fetchNextPage(completion: Result<PokemonListItem, ConnectionError>) {
-//    
-//    }
+    func fetchNextPage(path: String?, completion: @escaping (Result<PokemonListResponse, ConnectionError>) -> Void)
     
 }

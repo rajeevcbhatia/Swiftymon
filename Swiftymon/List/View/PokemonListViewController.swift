@@ -17,6 +17,7 @@ class PokemonListViewController: BaseViewController {
             pokemonListTableView.dataSource = self
             pokemonListTableView.delegate = self
             pokemonListTableView.prefetchDataSource = self
+        pokemonListTableView.register(UITableViewCell.self, forCellReuseIdentifier: pokemonListViewModel.pokemonCellIdentifier)
         }
         
     }
@@ -35,8 +36,6 @@ class PokemonListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         presenter.attach(view: self)
     }
 
@@ -49,10 +48,13 @@ extension PokemonListViewController: PokemonListView {
         
         pokemonListViewModel.items.append(contentsOf: items)
         
-        var newIndexPaths = (currentCount ..< currentCount + items.count).map { IndexPath(row: $0, section: 0) }
-        
-        pokemonListTableView.beginUpdates()
-        pokemonListTableView.insertRows(at: newIndexPaths, with: .bottom)
+        let newIndexPaths = (currentCount ..< currentCount + items.count).map { IndexPath(row: $0, section: 0) }
+        DispatchQueue.main.async { [weak self] in
+            
+            self?.pokemonListTableView.beginUpdates()
+            self?.pokemonListTableView.insertRows(at: newIndexPaths, with: .bottom)
+            self?.pokemonListTableView.endUpdates()
+        }
     }
     
 }
@@ -60,8 +62,12 @@ extension PokemonListViewController: PokemonListView {
 extension PokemonListViewController: UITableViewDataSource, UITableViewDelegate, UITableViewDataSourcePrefetching {
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+
+        let isInLast10 = indexPaths.contains(where: { (indexPath) -> Bool in
+            indexPath.row == pokemonListViewModel.count - 10
+        })
         
-        if presenter.shouldNotifyOnSrollToEnd {
+        if isInLast10 && presenter.shouldNotifyOnSrollToEnd {
             presenter.didScrollToLastRows()
         }
         
@@ -70,11 +76,11 @@ extension PokemonListViewController: UITableViewDataSource, UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let pokemonCell = tableView.dequeueReusableCell(withIdentifier: "pokemonCell", for: indexPath)
+        let pokemonCell = tableView.dequeueReusableCell(withIdentifier: pokemonListViewModel.pokemonCellIdentifier, for: indexPath)
         
         let currentPokemon = pokemonListViewModel.items[indexPath.row]
+        pokemonCell.imageView?.sd_setImage(with: URL(string: currentPokemon.imagePath), placeholderImage: UIImage(named: "pokeball"), options: .scaleDownLargeImages, completed: nil)
         
-        pokemonCell.imageView?.sd_setImage(with: URL(string: currentPokemon.imagePath), completed: nil)
         pokemonCell.textLabel?.text = currentPokemon.name
         
         return pokemonCell
@@ -85,4 +91,7 @@ extension PokemonListViewController: UITableViewDataSource, UITableViewDelegate,
         return pokemonListViewModel.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return pokemonListViewModel.rowHeight
+    }
 }

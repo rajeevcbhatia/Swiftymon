@@ -20,10 +20,15 @@ struct PokemonListItem: Codable {
     let url: String
     
     var imagePath: String {
-        return ""
+        guard let id = id else {
+            return "https://img.icons8.com/nolan/2x/pokeball.png"
+        }
+        
+        return URLBuilder.pokemonImage(id: id).path
     }
     
     var id: String? {
-        return url.components(separatedBy: "/").last
+        let urlString = url.hasSuffix("/") ? String(url.dropLast()) : url
+        return urlString.components(separatedBy: "/").last
     }
 }

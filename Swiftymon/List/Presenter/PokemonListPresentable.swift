@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PokemonListPresentable {
-    var shouldNotifyOnSrollToEnd: Bool
+    var shouldNotifyOnSrollToEnd: Bool { get set }
     func attach(view: PokemonListView)
     func didScrollToLastRows()
 }

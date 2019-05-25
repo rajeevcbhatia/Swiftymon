@@ -7,8 +7,12 @@
 //
 
 import Foundation
+import CoreGraphics
 
 struct PokemonListViewModel {
+    
+    let pokemonCellIdentifier = "pokemonCellIdentifier"
+    let rowHeight: CGFloat = 100
     
     var count: Int {
         return items.count
