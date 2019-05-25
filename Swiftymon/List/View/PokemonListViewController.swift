@@ -17,7 +17,7 @@ class PokemonListViewController: BaseViewController {
             pokemonListTableView.dataSource = self
             pokemonListTableView.delegate = self
             pokemonListTableView.prefetchDataSource = self
-        pokemonListTableView.register(UITableViewCell.self, forCellReuseIdentifier: pokemonListViewModel.pokemonCellIdentifier)
+        pokemonListTableView.register(UINib(nibName: PokemonListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PokemonListTableViewCell.identifier)
         }
         
     }
@@ -76,12 +76,11 @@ extension PokemonListViewController: UITableViewDataSource, UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let pokemonCell = tableView.dequeueReusableCell(withIdentifier: pokemonListViewModel.pokemonCellIdentifier, for: indexPath)
+        guard let pokemonCell = tableView.dequeueReusableCell(withIdentifier: PokemonListTableViewCell.identifier, for: indexPath) as? PokemonListTableViewCell else { return UITableViewCell() }
         
         let currentPokemon = pokemonListViewModel.items[indexPath.row]
-        pokemonCell.imageView?.sd_setImage(with: URL(string: currentPokemon.imagePath), placeholderImage: UIImage(named: "pokeball"), options: .scaleDownLargeImages, completed: nil)
-        
-        pokemonCell.textLabel?.text = currentPokemon.name
+       
+        pokemonCell.pokemon = currentPokemon
         
         return pokemonCell
         
