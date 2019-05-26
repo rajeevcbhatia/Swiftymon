@@ -51,12 +51,15 @@ extension PokemonListViewController: PokemonListView {
             
             let currentCount = strongSelf.pokemonListViewModel.count
             
+        
             strongSelf.pokemonListViewModel.items.append(contentsOf: items)
             
             let newIndexPaths = (currentCount ..< currentCount + items.count).map { IndexPath(row: $0, section: 0) }
             
             strongSelf.pokemonListTableView.beginUpdates()
-            strongSelf.pokemonListTableView.insertRows(at: newIndexPaths, with: .none)
+            strongSelf.pokemonListTableView.insertRows(at: newIndexPaths, with: .fade)
+            
+        strongSelf.pokemonListTableView.setContentOffset(strongSelf.pokemonListTableView.contentOffset, animated: false)//to fix jump on insert rows
             strongSelf.pokemonListTableView.endUpdates()
         }
     }
@@ -67,11 +70,11 @@ extension PokemonListViewController: UITableViewDataSource, UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
 
-        let isInLast30 = indexPaths.contains(where: { (indexPath) -> Bool in
-            indexPath.row >= pokemonListViewModel.count - 30
+        let isInLast50 = indexPaths.contains(where: { (indexPath) -> Bool in
+            indexPath.row >= pokemonListViewModel.count - 50
         })
         
-        if isInLast30 && presenter.shouldNotifyOnSrollToEnd {
+        if isInLast50 && presenter.shouldNotifyOnSrollToEnd {
             presenter.didScrollToLastRows()
         }
         

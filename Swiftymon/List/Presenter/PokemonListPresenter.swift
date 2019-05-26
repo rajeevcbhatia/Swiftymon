@@ -37,6 +37,7 @@ class PokemonListPresenter: PokemonListPresentable {
         pokemonListService.fetchNextPage(path: nextPagePath) { [weak self] (result) in
             self?.pokemonListView?.hideLoader()
             guard let response = try? result.get() else {
+                self?.pokemonListView?.showAlert(title: "Alert", message: "Could not fetch response")
                 self?.shouldNotifyOnSrollToEnd = true
                 return
             }

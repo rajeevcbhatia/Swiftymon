@@ -7,22 +7,31 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-class BaseViewController: UIViewController {
-}
-
-extension BaseViewController: BaseView {
-    
-    func showAlert(title: String, message: String) {
-        
-    }
+class BaseViewController: UIViewController, BaseView {
     
     func showLoader() {
-        
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            MBProgressHUD.showAdded(to: strongSelf.view, animated: true)
+        }
     }
     
     func hideLoader() {
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            MBProgressHUD.hide(for: strongSelf.view, animated: true)
+        }
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.cancel, handler: nil)
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
     
 }

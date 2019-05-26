@@ -21,7 +21,7 @@ class PokemonListTableViewCell: UITableViewCell {
         didSet {
             guard let pokemon = pokemon else { return }
             pokemonImageView?.sd_setImage(with: URL(string: pokemon.imagePath), completed: nil)
-            nameLabel.text = pokemon.name
+            nameLabel.text = pokemon.name.capitalized
         }
     }
     
