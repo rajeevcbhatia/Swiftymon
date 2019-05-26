@@ -22,10 +22,10 @@ class PokemonListViewController: BaseViewController {
         
     }
     
-    private let presenter: PokemonListPresentable
+    internal let presenter: PokemonListPresentable
     private var pokemonListViewModel = PokemonListViewModel()
     
-    init(presenter: PokemonListPresentable) {
+    required init(presenter: PokemonListPresentable) {
         self.presenter = presenter
         super.init(nibName: String(describing: PokemonListViewController.self), bundle: nil)
     }
@@ -52,7 +52,7 @@ extension PokemonListViewController: PokemonListView {
         DispatchQueue.main.async { [weak self] in
             
             self?.pokemonListTableView.beginUpdates()
-            self?.pokemonListTableView.insertRows(at: newIndexPaths, with: .bottom)
+            self?.pokemonListTableView.insertRows(at: newIndexPaths, with: .none)
             self?.pokemonListTableView.endUpdates()
         }
     }
@@ -63,11 +63,11 @@ extension PokemonListViewController: UITableViewDataSource, UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
 
-        let isInLast10 = indexPaths.contains(where: { (indexPath) -> Bool in
-            indexPath.row == pokemonListViewModel.count - 10
+        let isInLast30 = indexPaths.contains(where: { (indexPath) -> Bool in
+            indexPath.row == pokemonListViewModel.count - 30
         })
         
-        if isInLast10 && presenter.shouldNotifyOnSrollToEnd {
+        if isInLast30 && presenter.shouldNotifyOnSrollToEnd {
             presenter.didScrollToLastRows()
         }
         

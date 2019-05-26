@@ -13,7 +13,6 @@
 		9A1DAE2022996DB0008289C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE1F22996DB0008289C2 /* AppDelegate.swift */; };
 		9A1DAE2722996DB1008289C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1DAE2622996DB1008289C2 /* Assets.xcassets */; };
 		9A1DAE2A22996DB1008289C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1DAE2822996DB1008289C2 /* LaunchScreen.storyboard */; };
-		9A1DAE3522996DB2008289C2 /* SwiftymonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE3422996DB2008289C2 /* SwiftymonTests.swift */; };
 		9A1DAE4022996DB2008289C2 /* SwiftymonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE3F22996DB2008289C2 /* SwiftymonUITests.swift */; };
 		9A1DAE5022997CDB008289C2 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE4F22997CDB008289C2 /* BaseView.swift */; };
 		9A1DAE5222997D0C008289C2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE5122997D0C008289C2 /* BaseViewController.swift */; };
@@ -35,6 +34,9 @@
 		9A1DAE802299F606008289C2 /* Evolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE7F2299F606008289C2 /* Evolution.swift */; };
 		9A1DAE822299FA0B008289C2 /* PokemonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE812299FA0B008289C2 /* PokemonDetails.swift */; };
 		9A1DAE842299FAA4008289C2 /* PokemonDetailNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE832299FAA4008289C2 /* PokemonDetailNetworkService.swift */; };
+		9A1DAE87229A8C13008289C2 /* MockPokemonListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE86229A8C13008289C2 /* MockPokemonListService.swift */; };
+		9A1DAE89229AE4F0008289C2 /* PokemonListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE88229AE4F0008289C2 /* PokemonListPresenterTests.swift */; };
+		9A1DAE8B229AE90B008289C2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE8A229AE90B008289C2 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +69,6 @@
 		9A1DAE2922996DB1008289C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A1DAE2B22996DB1008289C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A1DAE3022996DB2008289C2 /* SwiftymonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftymonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A1DAE3422996DB2008289C2 /* SwiftymonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftymonTests.swift; sourceTree = "<group>"; };
 		9A1DAE3622996DB2008289C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A1DAE3B22996DB2008289C2 /* SwiftymonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftymonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1DAE3F22996DB2008289C2 /* SwiftymonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftymonUITests.swift; sourceTree = "<group>"; };
@@ -92,6 +93,9 @@
 		9A1DAE7F2299F606008289C2 /* Evolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evolution.swift; sourceTree = "<group>"; };
 		9A1DAE812299FA0B008289C2 /* PokemonDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetails.swift; sourceTree = "<group>"; };
 		9A1DAE832299FAA4008289C2 /* PokemonDetailNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailNetworkService.swift; sourceTree = "<group>"; };
+		9A1DAE86229A8C13008289C2 /* MockPokemonListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPokemonListService.swift; sourceTree = "<group>"; };
+		9A1DAE88229AE4F0008289C2 /* PokemonListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListPresenterTests.swift; sourceTree = "<group>"; };
+		9A1DAE8A229AE90B008289C2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B0F41D02C85C93D2D80C364E /* Pods-Swiftymon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftymon.release.xcconfig"; path = "Target Support Files/Pods-Swiftymon/Pods-Swiftymon.release.xcconfig"; sourceTree = "<group>"; };
 		BF3F822C07E3D03B24D09A1E /* Pods-SwiftymonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftymonUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftymonUITests/Pods-SwiftymonUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C14380D1862B6474C5E0962F /* Pods-SwiftymonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftymonTests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftymonTests/Pods-SwiftymonTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -177,7 +181,7 @@
 		9A1DAE3322996DB2008289C2 /* SwiftymonTests */ = {
 			isa = PBXGroup;
 			children = (
-				9A1DAE3422996DB2008289C2 /* SwiftymonTests.swift */,
+				9A1DAE85229A8BF6008289C2 /* ListTests */,
 				9A1DAE3622996DB2008289C2 /* Info.plist */,
 			);
 			path = SwiftymonTests;
@@ -211,6 +215,7 @@
 				9A1DAE6C2299B0F7008289C2 /* URLBuilder.swift */,
 				9A1DAE702299B269008289C2 /* URLConstants.swift */,
 				9A1DAE722299B8ED008289C2 /* Networking.swift */,
+				9A1DAE8A229AE90B008289C2 /* main.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -295,6 +300,15 @@
 			children = (
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9A1DAE85229A8BF6008289C2 /* ListTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A1DAE86229A8C13008289C2 /* MockPokemonListService.swift */,
+				9A1DAE88229AE4F0008289C2 /* PokemonListPresenterTests.swift */,
+			);
+			path = ListTests;
 			sourceTree = "<group>";
 		};
 		AC88FA7714AF5DABBC363F2C /* Frameworks */ = {
@@ -382,6 +396,7 @@
 					};
 					9A1DAE2F22996DB2008289C2 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 9A1DAE1B22996DB0008289C2;
 					};
 					9A1DAE3A22996DB2008289C2 = {
@@ -535,6 +550,7 @@
 				9A1DAE6F2299B12F008289C2 /* PokemonListNetworkService.swift in Sources */,
 				9A1DAE842299FAA4008289C2 /* PokemonDetailNetworkService.swift in Sources */,
 				9A1DAE5E22998B88008289C2 /* PokemonListPresentable.swift in Sources */,
+				9A1DAE8B229AE90B008289C2 /* main.swift in Sources */,
 				9A1DAE6D2299B0F7008289C2 /* URLBuilder.swift in Sources */,
 				9A1DAE2022996DB0008289C2 /* AppDelegate.swift in Sources */,
 				9A1DAE762299E54F008289C2 /* PokemonListTableViewCell.swift in Sources */,
@@ -555,7 +571,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A1DAE3522996DB2008289C2 /* SwiftymonTests.swift in Sources */,
+				9A1DAE89229AE4F0008289C2 /* PokemonListPresenterTests.swift in Sources */,
+				9A1DAE87229A8C13008289C2 /* MockPokemonListService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +769,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftymonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -761,6 +779,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rajeev.SwiftymonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swiftymon.app/Swiftymon";
@@ -773,6 +792,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftymonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

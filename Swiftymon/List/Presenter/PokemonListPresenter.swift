@@ -16,7 +16,7 @@ class PokemonListPresenter: PokemonListPresentable {
     
     private let pokemonListService: PokemonListService
     
-    private var nextPagePath: String?
+    var nextPagePath: String?
     
     init(pokemonListService: PokemonListService) {
         self.pokemonListService = pokemonListService

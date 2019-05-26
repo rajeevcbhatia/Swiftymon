@@ -9,7 +9,6 @@
 import Foundation
 
 struct PokemonListResponse: Codable {
-    let count: Int
     let next: String?
     let results: [Pokemon]
 }
