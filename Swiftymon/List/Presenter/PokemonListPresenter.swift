@@ -9,16 +9,15 @@
 import Foundation
 
 class PokemonListPresenter: PokemonListPresentable {
-    
     var shouldNotifyOnSrollToEnd = true
     
     weak private var pokemonListView: PokemonListView?
     
-    private let pokemonListService: PokemonListService
+    internal let pokemonListService: PokemonListService
     
     var nextPagePath: String?
     
-    init(pokemonListService: PokemonListService) {
+    required init(pokemonListService: PokemonListService) {
         self.pokemonListService = pokemonListService
     }
     

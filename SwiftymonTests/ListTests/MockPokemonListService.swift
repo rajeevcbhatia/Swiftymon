@@ -27,15 +27,11 @@ class MockPokemonListService: PokemonListService {
         
         let next = (path == MockListPageTypes.pageWithoutNext.rawValue) ? nil : "next"
         
-        let pokemon = (1..<40).map { "\($0)" }.map { Pokemon.init(name: $0, url: URLBuilder.pokemonImage(id: $0).path) }
+        let pokemon = (1..<100).map { "\($0)" }.map { Pokemon.init(name: $0, url: URLBuilder.pokemonImage(id: $0).path) }
         
         let response = PokemonListResponse(next: next, results: pokemon)
         
         completion(.success(response))
-        
-    }
-    
-    private func getPokemon(from index: Int) {
         
     }
 }

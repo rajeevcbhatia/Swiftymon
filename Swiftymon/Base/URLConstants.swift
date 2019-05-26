@@ -20,6 +20,6 @@ enum UrlParams: String {
 }
 
 enum UrlValues: String {
-    case limit = "40"
+    case limit = "100"
     case offset = "0"
 }

@@ -9,6 +9,13 @@
 import Foundation
 
 protocol PokemonListPresentable {
+    
+    var pokemonListService: PokemonListService { get }
+    
+    var nextPagePath: String? { get }
+    
+    init(pokemonListService: PokemonListService)
+    
     var shouldNotifyOnSrollToEnd: Bool { get set }
     func attach(view: PokemonListView)
     func didScrollToLastRows()

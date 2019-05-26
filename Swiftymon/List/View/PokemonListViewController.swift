@@ -44,16 +44,20 @@ class PokemonListViewController: BaseViewController {
 extension PokemonListViewController: PokemonListView {
     
     func addPokemon(items: [Pokemon]) {
-        let currentCount = pokemonListViewModel.count
         
-        pokemonListViewModel.items.append(contentsOf: items)
-        
-        let newIndexPaths = (currentCount ..< currentCount + items.count).map { IndexPath(row: $0, section: 0) }
         DispatchQueue.main.async { [weak self] in
             
-            self?.pokemonListTableView.beginUpdates()
-            self?.pokemonListTableView.insertRows(at: newIndexPaths, with: .none)
-            self?.pokemonListTableView.endUpdates()
+            guard let strongSelf = self else { return }
+            
+            let currentCount = strongSelf.pokemonListViewModel.count
+            
+            strongSelf.pokemonListViewModel.items.append(contentsOf: items)
+            
+            let newIndexPaths = (currentCount ..< currentCount + items.count).map { IndexPath(row: $0, section: 0) }
+            
+            strongSelf.pokemonListTableView.beginUpdates()
+            strongSelf.pokemonListTableView.insertRows(at: newIndexPaths, with: .none)
+            strongSelf.pokemonListTableView.endUpdates()
         }
     }
     
@@ -64,7 +68,7 @@ extension PokemonListViewController: UITableViewDataSource, UITableViewDelegate,
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
 
         let isInLast30 = indexPaths.contains(where: { (indexPath) -> Bool in
-            indexPath.row == pokemonListViewModel.count - 30
+            indexPath.row >= pokemonListViewModel.count - 30
         })
         
         if isInLast30 && presenter.shouldNotifyOnSrollToEnd {

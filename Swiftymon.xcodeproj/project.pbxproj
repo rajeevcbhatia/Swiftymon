@@ -37,6 +37,7 @@
 		9A1DAE87229A8C13008289C2 /* MockPokemonListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE86229A8C13008289C2 /* MockPokemonListService.swift */; };
 		9A1DAE89229AE4F0008289C2 /* PokemonListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE88229AE4F0008289C2 /* PokemonListPresenterTests.swift */; };
 		9A1DAE8B229AE90B008289C2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE8A229AE90B008289C2 /* main.swift */; };
+		9A9E64C0229B0A4A00246895 /* PokemonListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E64BF229B0A4A00246895 /* PokemonListViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		9A1DAE86229A8C13008289C2 /* MockPokemonListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPokemonListService.swift; sourceTree = "<group>"; };
 		9A1DAE88229AE4F0008289C2 /* PokemonListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListPresenterTests.swift; sourceTree = "<group>"; };
 		9A1DAE8A229AE90B008289C2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		9A9E64BF229B0A4A00246895 /* PokemonListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewControllerTests.swift; sourceTree = "<group>"; };
 		B0F41D02C85C93D2D80C364E /* Pods-Swiftymon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftymon.release.xcconfig"; path = "Target Support Files/Pods-Swiftymon/Pods-Swiftymon.release.xcconfig"; sourceTree = "<group>"; };
 		BF3F822C07E3D03B24D09A1E /* Pods-SwiftymonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftymonUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftymonUITests/Pods-SwiftymonUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C14380D1862B6474C5E0962F /* Pods-SwiftymonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftymonTests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftymonTests/Pods-SwiftymonTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			children = (
 				9A1DAE86229A8C13008289C2 /* MockPokemonListService.swift */,
 				9A1DAE88229AE4F0008289C2 /* PokemonListPresenterTests.swift */,
+				9A9E64BF229B0A4A00246895 /* PokemonListViewControllerTests.swift */,
 			);
 			path = ListTests;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 			files = (
 				9A1DAE89229AE4F0008289C2 /* PokemonListPresenterTests.swift in Sources */,
 				9A1DAE87229A8C13008289C2 /* MockPokemonListService.swift in Sources */,
+				9A9E64C0229B0A4A00246895 /* PokemonListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
