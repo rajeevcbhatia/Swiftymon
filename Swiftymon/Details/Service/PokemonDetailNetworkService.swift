@@ -10,30 +10,41 @@ import Foundation
 
 class PokemonDetailNetworkService: PokemonDetailService {
     
-    func fetchEvolution(path: String, completion: @escaping (Result<Evolution, ConnectionError>) -> Void) {
+    internal func fetchEvolution(path: String, completion: @escaping (Result<Evolution, ConnectionError>) -> Void) {
         
         Networking.sendRequest(with: path) { (result) in
             guard let data = try? result.get(), let evolution: Evolution = Networking.decode(data: data) else {
                 completion(.failure(.couldNotGetDetails))
                 return
             }
-            print(evolution)
+            completion(.success(evolution))
         }
         
     }
     
-    func fetchDetails(path: String, completion: @escaping (Result<PokemonDetails, ConnectionError>) -> Void) {
+    func fetchDetails(path: String, completion: @escaping (Result<(PokemonDetails, Evolution?), ConnectionError>) -> Void) {
         
-        Networking.sendRequest(with: path) { [weak self] (result) in
+        Networking.sendRequest(with: path) { (result) in
             guard let data = try? result.get(), let details: PokemonDetails = Networking.decode(data: data) else {
                 completion(.failure(.couldNotGetDetails))
                 return
             }
             
             if let evolutionPath = details.evolutionChain?.url {
-                self?.fetchEvolution(path: evolutionPath, completion: { (evolutionResult) in
+                //self is retained here else closure exits and API call is not completed
+                self.fetchEvolution(path: evolutionPath, completion: { (evolutionResult) in
                     
+                    guard let evolution = try? evolutionResult.get() else {
+                        // could not fetch evolution, complete with details
+                        completion(.success((details,nil)))
+                        return
+                    }
+                    //complete with details and evolution
+                    completion(.success((details, evolution)))
                 })
+            } else {
+                // only fetched details, no evolution
+                completion(.success((details,nil)))
             }
         }
         
