@@ -35,11 +35,13 @@ class PokemonDetailsViewController: BaseViewController {
 
 extension PokemonDetailsViewController: PokemonDetailsView {
     func didFetch(detailsWithEvolution: DetailsWithEvolution) {
+        
         let flavorText = detailsWithEvolution.details.flavorText
         flavorLabel.text = flavorText?.replacingOccurrences(of: "\n", with: "")
-        if let evolution = detailsWithEvolution.evolution {
+        
+        if let evolution = detailsWithEvolution.evolution, let evolvesTo = evolution.chain.evolvesTo, evolvesTo.count > 0 {
             evolutionCollection.isHidden = false
-            evolutionCollection.evolution = evolution
+            evolutionCollection.viewModel = EvolutionCollectionViewModel(from: evolution)
         }
     }
 }

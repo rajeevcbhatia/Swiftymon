@@ -25,7 +25,11 @@ class PokemonDetailsPresenter: PokemonDetailsPresentable {
                 view.showAlert(title: "Alert", message: "Could not fetch data")
                 return
             }
+            
+            DispatchQueue.main.async { [weak self] in
             self?.pokemonDetailsView?.didFetch(detailsWithEvolution: response)
+                
+            }
         }
     }
     

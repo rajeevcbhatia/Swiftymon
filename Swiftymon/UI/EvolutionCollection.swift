@@ -11,7 +11,11 @@ import SDWebImage
 
 class EvolutionCollection: UICollectionView {
     
-    var evolution: Evolution?
+    var viewModel: EvolutionCollectionViewModel? {
+        didSet {
+            reloadData()
+        }
+    }
 
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -33,14 +37,38 @@ class EvolutionCollection: UICollectionView {
     
 }
 
-extension EvolutionCollection: UICollectionViewDelegate, UICollectionViewDataSource {
+extension EvolutionCollection: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 50
+        return viewModel?.items.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: ImageAndTextCollectionViewCell.identifier, for: indexPath) as! ImageAndTextCollectionViewCell
-        cell.imgView.sd_setImage(with: URL(string: URLBuilder.pokemonImage(id: "\(indexPath.item)").path), completed: nil)
+        let pokemon = viewModel?.items[indexPath.item]
+        let id = pokemon?.id ?? ""
+        cell.imgView.sd_setImage(with: URL(string: URLBuilder.pokemonImage(id: id).path), completed: nil)
+        cell.textLabel.text = pokemon?.name
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = CGSize(width: frame.height - 20, height: frame.height - 20)
+        return size
+    }
+}
+
+struct EvolutionCollectionViewModel {
+    
+    let items: [Pokemon]
+    
+    init(from evolution: Evolution) {
+        var pokemon = [Pokemon]()
+        var chain: Chain? = evolution.chain
+        while let unwrappedChain = chain {
+            pokemon.append(unwrappedChain.species)
+            chain = unwrappedChain.evolvesTo?.first
+        }
+        items = pokemon
+    }
+    
 }
