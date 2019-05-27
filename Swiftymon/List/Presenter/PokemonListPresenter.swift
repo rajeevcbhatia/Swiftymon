@@ -51,4 +51,8 @@ class PokemonListPresenter: PokemonListPresentable {
         }
         
     }
+    
+    func didSelectPokemon(id: String) {
+        pokemonListView?.goToDetails(id: id)
+    }
 }

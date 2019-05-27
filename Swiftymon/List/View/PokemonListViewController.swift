@@ -22,7 +22,7 @@ class PokemonListViewController: BaseViewController {
         
     }
     
-    internal let presenter: PokemonListPresentable
+    private let presenter: PokemonListPresentable
     private var pokemonListViewModel = PokemonListViewModel()
     
     required init(presenter: PokemonListPresentable) {
@@ -62,6 +62,13 @@ extension PokemonListViewController: PokemonListView {
         strongSelf.pokemonListTableView.setContentOffset(strongSelf.pokemonListTableView.contentOffset, animated: false)//to fix jump on insert rows
             strongSelf.pokemonListTableView.endUpdates()
         }
+    }
+    
+    func goToDetails(id: String) {
+        let detailsService = PokemonDetailsNetworkService(pokemonId: id)
+        let detailsPresenter = PokemonDetailsPresenter(pokemonDetailsService: detailsService)
+        let detailsVC = PokemonDetailsViewController(presenter: detailsPresenter)
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
     
 }
@@ -104,12 +111,10 @@ extension PokemonListViewController: UITableViewDataSource, UITableViewDelegate,
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let url = pokemonListViewModel.items[indexPath.row].url
-        
-        let service = PokemonDetailNetworkService()
-        
-        service.fetchDetails(path: url) { (result) in
-            
+        guard let id = pokemonListViewModel.items[indexPath.row].id else {
+            return
         }
+        
+        presenter.didSelectPokemon(id: id)
     }
 }

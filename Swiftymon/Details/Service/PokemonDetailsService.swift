@@ -8,7 +8,9 @@
 
 import Foundation
 
-protocol PokemonDetailService {
+protocol PokemonDetailsService {
+    
+    init(pokemonId: String)
     
     func fetchDetails(path: String, completion: @escaping (Result<(PokemonDetails, Evolution?), ConnectionError>) -> Void)
     func fetchEvolution(path: String, completion: @escaping (Result<Evolution, ConnectionError>) -> Void)

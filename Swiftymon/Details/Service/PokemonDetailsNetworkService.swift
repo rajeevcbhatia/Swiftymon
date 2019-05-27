@@ -8,7 +8,13 @@
 
 import Foundation
 
-class PokemonDetailNetworkService: PokemonDetailService {
+class PokemonDetailsNetworkService: PokemonDetailsService {
+    
+    private let pokemonId: String
+    
+    required init(pokemonId: String) {
+        self.pokemonId = pokemonId
+    }
     
     internal func fetchEvolution(path: String, completion: @escaping (Result<Evolution, ConnectionError>) -> Void) {
         

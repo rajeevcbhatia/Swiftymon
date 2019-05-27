@@ -9,8 +9,9 @@
 import Foundation
 
 protocol PokemonListView: BaseView {
-    var presenter: PokemonListPresentable { get }
     
     init(presenter: PokemonListPresentable)
     func addPokemon(items: [Pokemon])
+    
+    func goToDetails(id: String)
 }

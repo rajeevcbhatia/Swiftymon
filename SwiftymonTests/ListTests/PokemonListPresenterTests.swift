@@ -74,7 +74,7 @@ class PokemonListPresenterTests: XCTestCase {
 
 private class MockPokemonListView: PokemonListView {
     
-    internal let presenter: PokemonListPresentable
+    private let presenter: PokemonListPresentable
     var wasAddPokemonCalled = false
     
     required init(presenter: PokemonListPresentable) {
@@ -94,6 +94,10 @@ private class MockPokemonListView: PokemonListView {
     }
     
     func hideLoader() {
+        
+    }
+    
+    func goToDetails(id: String) {
         
     }
 }
