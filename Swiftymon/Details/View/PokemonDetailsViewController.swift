@@ -12,6 +12,10 @@ class PokemonDetailsViewController: BaseViewController {
     
     private let presenter: PokemonDetailsPresentable
     
+    @IBOutlet weak var flavorLabel: UILabel!
+    
+    @IBOutlet weak var evolutionCollection: EvolutionCollection!
+    
     required init(presenter: PokemonDetailsPresentable) {
         self.presenter = presenter
         super.init(nibName: String(describing: PokemonDetailsViewController.self), bundle: nil)
@@ -30,5 +34,12 @@ class PokemonDetailsViewController: BaseViewController {
 }
 
 extension PokemonDetailsViewController: PokemonDetailsView {
-    
+    func didFetch(detailsWithEvolution: DetailsWithEvolution) {
+        let flavorText = detailsWithEvolution.details.flavorText
+        flavorLabel.text = flavorText?.replacingOccurrences(of: "\n", with: "")
+        if let evolution = detailsWithEvolution.evolution {
+            evolutionCollection.isHidden = false
+            evolutionCollection.evolution = evolution
+        }
+    }
 }

@@ -10,9 +10,13 @@ import Foundation
 
 protocol PokemonDetailsService {
     
+    var pokemonId: String { get }
+    
     init(pokemonId: String)
     
-    func fetchDetails(path: String, completion: @escaping (Result<(PokemonDetails, Evolution?), ConnectionError>) -> Void)
+    func fetchDetails(path: String, completion: @escaping (Result<DetailsWithEvolution, ConnectionError>) -> Void)
     func fetchEvolution(path: String, completion: @escaping (Result<Evolution, ConnectionError>) -> Void)
     
 }
+
+typealias DetailsWithEvolution = (details: PokemonDetails, evolution: Evolution?)

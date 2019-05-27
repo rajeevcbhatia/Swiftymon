@@ -10,4 +10,6 @@ import Foundation
 
 protocol PokemonDetailsView: BaseView {
     init(presenter: PokemonDetailsPresentable)
+    
+    func didFetch(detailsWithEvolution: DetailsWithEvolution)
 }

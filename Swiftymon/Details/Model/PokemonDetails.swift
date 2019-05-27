@@ -12,9 +12,14 @@ import Foundation
 struct PokemonDetails: Codable {
     let evolutionChain: EvolutionChain?
     let evolvesFromSpecies: Pokemon?
-    let flavorTextEntries: [FlavorTextEntry]?
+    private let flavorTextEntries: [FlavorTextEntry]?
     let id: Int
     let name: String
+    
+    var flavorText: String? {
+        guard let currentLocale = Locale.current.identifier.components(separatedBy: "_").first, let flavors = flavorTextEntries else { return nil }
+        return flavors.first { $0.language.name == currentLocale }?.flavorText
+    }
     
     enum CodingKeys: String, CodingKey {
         case evolutionChain = "evolution_chain"
@@ -30,7 +35,7 @@ struct EvolutionChain: Codable {
 }
 
 // MARK: - FlavorTextEntry
-struct FlavorTextEntry: Codable {
+private struct FlavorTextEntry: Codable {
     let flavorText: String
     let language: Language
     
@@ -40,7 +45,7 @@ struct FlavorTextEntry: Codable {
     }
 }
 
-struct Language: Codable {
+private struct Language: Codable {
     let name: String
     let url: String?
 }

@@ -10,7 +10,7 @@ import Foundation
 
 class PokemonDetailsNetworkService: PokemonDetailsService {
     
-    private let pokemonId: String
+    let pokemonId: String
     
     required init(pokemonId: String) {
         self.pokemonId = pokemonId
@@ -28,8 +28,8 @@ class PokemonDetailsNetworkService: PokemonDetailsService {
         
     }
     
-    func fetchDetails(path: String, completion: @escaping (Result<(PokemonDetails, Evolution?), ConnectionError>) -> Void) {
-        
+    func fetchDetails(path: String, completion: @escaping (Result<DetailsWithEvolution, ConnectionError>) -> Void) {
+    
         Networking.sendRequest(with: path) { (result) in
             guard let data = try? result.get(), let details: PokemonDetails = Networking.decode(data: data) else {
                 completion(.failure(.couldNotGetDetails))

@@ -22,7 +22,7 @@ enum URLBuilder {
         case .pokemonImage(id: let id):
             return UrlBase.imageBase.rawValue + id + ".png"
         case .pokemonDetails(id: let id):
-            return UrlBase.apiBase.rawValue + UrlBase.pokemonSpecies.rawValue + "\\\(id)"
+            return UrlBase.apiBase.rawValue + UrlBase.pokemonSpecies.rawValue + "/\(id)"
         }
         
     }
