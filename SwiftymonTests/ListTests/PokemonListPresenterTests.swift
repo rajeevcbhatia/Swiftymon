@@ -69,6 +69,17 @@ class PokemonListPresenterTests: XCTestCase {
         
         XCTAssert(mockView.wasAddPokemonCalled, "pokemon were not added after view was attached")
     }
+    
+    func testWillGoToDetailsWhenPokemonIsSelected() {
+        guard let presenter = presenter else { XCTFail("list presenter was not initialised"); return }
+        
+        let mockView  = MockPokemonListView(presenter: presenter)
+        
+        presenter.attach(view: mockView)
+        presenter.didSelectPokemon(id: "1")
+        
+        XCTAssert(mockView.willGoToDetails, "not going to details on selecting pokemon")
+    }
 }
 
 
@@ -76,6 +87,7 @@ private class MockPokemonListView: PokemonListView {
     
     private let presenter: PokemonListPresentable
     var wasAddPokemonCalled = false
+    var willGoToDetails = false
     
     required init(presenter: PokemonListPresentable) {
         self.presenter = presenter
@@ -98,6 +110,6 @@ private class MockPokemonListView: PokemonListView {
     }
     
     func goToDetails(id: String) {
-        
+        willGoToDetails = true
     }
 }

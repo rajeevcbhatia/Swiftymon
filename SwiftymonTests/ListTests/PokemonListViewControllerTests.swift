@@ -29,25 +29,6 @@ class PokemonListViewControllerTests: XCTestCase {
         pokemonListPresenter = nil
     }
     
-    func testPokemonPresentAfterLoad() {
-        
-        guard let _ = pokemonListPresenter, let vc = pokemonListVC else {
-            XCTFail("pokemonListVC test components not initialised")
-            return
-        }
-        
-        let expectation = XCTestExpectation(description: "pokemon loaded")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            let numberOfRows = vc.pokemonListTableView.numberOfRows(inSection: 0)
-            
-            XCTAssert(numberOfRows > 0, "no new pokemon loaded on scroll")
-            expectation.fulfill()
-        }
-        
-        _ = XCTWaiter.wait(for: [expectation], timeout: 3.0)
-        
-    }
-    
     func testMorePokemonLoadedOnScroll() {
         guard let presenter = pokemonListPresenter, let vc = pokemonListVC else {
             XCTFail("pokemonListVC test components not initialised")
@@ -70,6 +51,39 @@ class PokemonListViewControllerTests: XCTestCase {
                 let numberOfRowsNew = vc.pokemonListTableView.numberOfRows(inSection: 0)
                 
                 XCTAssert(numberOfRowsNew > numberOfRowsOld, "no new pokemon loaded on scroll")
+                expectation.fulfill()
+            }
+        }
+        
+        _ = XCTWaiter.wait(for: [expectation], timeout: 10.0)
+        
+    }
+    
+    func testDidShowDetailsOnTap() {
+        
+        guard let _ = pokemonListPresenter, let vc = pokemonListVC else {
+            XCTFail("pokemonListVC test components not initialised")
+            return
+        }
+        
+        let navigationController = UINavigationController(rootViewController: vc)
+        _ = navigationController.view
+        
+        let expectation = XCTestExpectation(description: "pokemon loaded")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            
+            let numberOfRows = vc.pokemonListTableView.numberOfRows(inSection: 0)
+            
+            XCTAssert(numberOfRows > 0, "no pokemon loaded on start")
+            
+            vc.tableView(vc.pokemonListTableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                guard let top = navigationController.topViewController, top is PokemonDetailsViewController else {
+                    XCTFail("details not shown after tapping row")
+                    expectation.fulfill()
+                    return
+                }
                 expectation.fulfill()
             }
         }
