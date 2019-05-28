@@ -14,7 +14,11 @@ class PokemonDetailsViewController: BaseViewController {
     
     @IBOutlet weak var flavorLabel: UILabel!
     
-    @IBOutlet weak var evolutionCollection: EvolutionCollection!
+    @IBOutlet weak var evolutionCollection: EvolutionCollection! {
+        didSet {
+            evolutionCollection.evolutionCollectionDelegate = self
+        }
+    }
     
     required init(presenter: PokemonDetailsPresentable) {
         self.presenter = presenter
@@ -36,12 +40,20 @@ class PokemonDetailsViewController: BaseViewController {
 extension PokemonDetailsViewController: PokemonDetailsView {
     func didFetch(detailsWithEvolution: DetailsWithEvolution) {
         
+        title = detailsWithEvolution.details.name.capitalized
+        
         let flavorText = detailsWithEvolution.details.flavorText
-        flavorLabel.text = flavorText?.replacingOccurrences(of: "\n", with: "")
+        flavorLabel.text = flavorText
         
         if let evolution = detailsWithEvolution.evolution, let evolvesTo = evolution.chain.evolvesTo, evolvesTo.count > 0 {
             evolutionCollection.isHidden = false
             evolutionCollection.viewModel = EvolutionCollectionViewModel(from: evolution)
         }
+    }
+}
+
+extension PokemonDetailsViewController: EvolutionCollectionDelegate {
+    func didSelect(pokemon: Pokemon) {
+        print(pokemon)
     }
 }

@@ -9,7 +9,13 @@
 import UIKit
 import SDWebImage
 
+protocol EvolutionCollectionDelegate: AnyObject {
+    func didSelect(pokemon: Pokemon)
+}
+
 class EvolutionCollection: UICollectionView {
+    
+    weak var evolutionCollectionDelegate: EvolutionCollectionDelegate?
     
     var viewModel: EvolutionCollectionViewModel? {
         didSet {
@@ -54,6 +60,15 @@ extension EvolutionCollection: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = CGSize(width: frame.height - 20, height: frame.height - 20)
         return size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        guard let pokemon = viewModel?.items[indexPath.item] else { return }
+        
+        evolutionCollectionDelegate?.didSelect(pokemon: pokemon)
     }
 }
 

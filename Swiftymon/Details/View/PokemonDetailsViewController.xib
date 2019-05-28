@@ -23,16 +23,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yt8-Gk-rfo">
-                    <rect key="frame" x="24" y="113" width="366" height="0.0"/>
+                    <rect key="frame" x="24" y="68" width="366" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KLs-UA-VDs" customClass="EvolutionCollection" customModule="Swiftymon" customModuleProvider="target">
-                    <rect key="frame" x="24" y="133" width="366" height="150"/>
+                    <rect key="frame" x="24" y="88" width="366" height="125"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="150" id="VA6-qS-Q8k"/>
+                        <constraint firstAttribute="height" constant="125" id="VA6-qS-Q8k"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WV4-oO-6a4">
                         <size key="itemSize" width="50" height="50"/>
@@ -45,7 +45,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yt8-Gk-rfo" secondAttribute="trailing" constant="24" id="8IQ-8g-A8v"/>
-                <constraint firstItem="Yt8-Gk-rfo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="69" id="BL3-j0-oMP"/>
+                <constraint firstItem="Yt8-Gk-rfo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="BL3-j0-oMP"/>
                 <constraint firstItem="KLs-UA-VDs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="CUN-0Z-DLA"/>
                 <constraint firstItem="KLs-UA-VDs" firstAttribute="top" secondItem="Yt8-Gk-rfo" secondAttribute="bottom" constant="20" id="iMw-2P-2c7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KLs-UA-VDs" secondAttribute="trailing" constant="24" id="kvM-fZ-jwb"/>

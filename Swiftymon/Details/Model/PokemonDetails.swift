@@ -18,7 +18,7 @@ struct PokemonDetails: Codable {
     
     var flavorText: String? {
         guard let currentLocale = Locale.current.identifier.components(separatedBy: "_").first, let flavors = flavorTextEntries else { return nil }
-        return flavors.first { $0.language.name == currentLocale }?.flavorText
+        return flavors.first { $0.language.name == currentLocale }?.flavorText.replacingOccurrences(of: "\n", with: " ")
     }
     
     enum CodingKeys: String, CodingKey {

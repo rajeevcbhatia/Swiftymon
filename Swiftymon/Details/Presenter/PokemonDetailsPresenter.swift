@@ -19,8 +19,11 @@ class PokemonDetailsPresenter: PokemonDetailsPresentable {
     
     func attach(view: PokemonDetailsView) {
         self.pokemonDetailsView = view
-        
+        pokemonDetailsView?.showLoader()
         pokemonDetailsService.fetchDetails(path: URLBuilder.pokemonDetails(id: pokemonDetailsService.pokemonId).path) { [weak self] (result) in
+            
+            self?.pokemonDetailsView?.hideLoader()
+            
             guard let response = try? result.get() else {
                 view.showAlert(title: "Alert", message: "Could not fetch data")
                 return
