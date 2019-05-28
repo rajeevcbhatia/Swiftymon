@@ -18,6 +18,8 @@
 		9A1CE084229C769000A12F1C /* EvolutionCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1CE083229C769000A12F1C /* EvolutionCollection.swift */; };
 		9A1CE08C229C78E700A12F1C /* ImageAndTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1CE08A229C78E700A12F1C /* ImageAndTextCollectionViewCell.swift */; };
 		9A1CE08D229C78E700A12F1C /* ImageAndTextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1CE08B229C78E700A12F1C /* ImageAndTextCollectionViewCell.xib */; };
+		9A1CE090229D0A9A00A12F1C /* MockPokemonDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1CE08F229D0A9A00A12F1C /* MockPokemonDetailsService.swift */; };
+		9A1CE092229D0FE400A12F1C /* PokemonDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1CE091229D0FE400A12F1C /* PokemonDetailsViewControllerTests.swift */; };
 		9A1DAE2022996DB0008289C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DAE1F22996DB0008289C2 /* AppDelegate.swift */; };
 		9A1DAE2722996DB1008289C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1DAE2622996DB1008289C2 /* Assets.xcassets */; };
 		9A1DAE2A22996DB1008289C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1DAE2822996DB1008289C2 /* LaunchScreen.storyboard */; };
@@ -80,6 +82,8 @@
 		9A1CE083229C769000A12F1C /* EvolutionCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionCollection.swift; sourceTree = "<group>"; };
 		9A1CE08A229C78E700A12F1C /* ImageAndTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndTextCollectionViewCell.swift; sourceTree = "<group>"; };
 		9A1CE08B229C78E700A12F1C /* ImageAndTextCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageAndTextCollectionViewCell.xib; sourceTree = "<group>"; };
+		9A1CE08F229D0A9A00A12F1C /* MockPokemonDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPokemonDetailsService.swift; sourceTree = "<group>"; };
+		9A1CE091229D0FE400A12F1C /* PokemonDetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsViewControllerTests.swift; sourceTree = "<group>"; };
 		9A1DAE1C22996DB0008289C2 /* Swiftymon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiftymon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1DAE1F22996DB0008289C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A1DAE2622996DB1008289C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,6 +174,15 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		9A1CE08E229D0A7A00A12F1C /* DetailsTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A1CE08F229D0A9A00A12F1C /* MockPokemonDetailsService.swift */,
+				9A1CE091229D0FE400A12F1C /* PokemonDetailsViewControllerTests.swift */,
+			);
+			path = DetailsTests;
+			sourceTree = "<group>";
+		};
 		9A1DAE1322996DB0008289C2 = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +223,7 @@
 		9A1DAE3322996DB2008289C2 /* SwiftymonTests */ = {
 			isa = PBXGroup;
 			children = (
+				9A1CE08E229D0A7A00A12F1C /* DetailsTests */,
 				9A1DAE85229A8BF6008289C2 /* ListTests */,
 				9A1DAE3622996DB2008289C2 /* Info.plist */,
 			);
@@ -614,7 +628,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A1CE090229D0A9A00A12F1C /* MockPokemonDetailsService.swift in Sources */,
 				9A1DAE89229AE4F0008289C2 /* PokemonListPresenterTests.swift in Sources */,
+				9A1CE092229D0FE400A12F1C /* PokemonDetailsViewControllerTests.swift in Sources */,
 				9A1DAE87229A8C13008289C2 /* MockPokemonListService.swift in Sources */,
 				9A9E64C0229B0A4A00246895 /* PokemonListViewControllerTests.swift in Sources */,
 			);
