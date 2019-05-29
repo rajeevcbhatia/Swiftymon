@@ -10,6 +10,7 @@ import Foundation
 
 protocol BaseView: AnyObject {
     func showAlert(title: String, message: String)
+    func showRetryAlert(title: String, message: String, callback: @escaping (() -> ()))
     func showLoader()
     func hideLoader()
 }

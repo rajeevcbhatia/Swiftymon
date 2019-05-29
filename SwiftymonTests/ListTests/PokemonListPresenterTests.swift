@@ -80,14 +80,31 @@ class PokemonListPresenterTests: XCTestCase {
         
         XCTAssert(mockView.willGoToDetails, "not going to details on selecting pokemon")
     }
+    
+    func testRetryAlertIsShownOnError() {
+        guard let presenter = presenter else { XCTFail("list presenter was not initialised"); return }
+        
+        let mockView  = MockPokemonListView(presenter: presenter)
+        
+        presenter.nextPagePath = MockListPageTypes.failure.rawValue
+        
+        XCTAssertFalse(mockView.wasRetryAlertShown, "retry alert was shown without error")
+        
+        presenter.attach(view: mockView)
+        
+        XCTAssert(mockView.wasRetryAlertShown, "retry alert was not shown on error response")
+        
+    }
 }
 
 
 private class MockPokemonListView: PokemonListView {
     
+    
     private let presenter: PokemonListPresentable
     var wasAddPokemonCalled = false
     var willGoToDetails = false
+    var wasRetryAlertShown = false
     
     required init(presenter: PokemonListPresentable) {
         self.presenter = presenter
@@ -111,5 +128,9 @@ private class MockPokemonListView: PokemonListView {
     
     func goToDetails(id: String) {
         willGoToDetails = true
+    }
+    
+    func showRetryAlert(title: String, message: String, callback: @escaping (() -> ())) {
+        wasRetryAlertShown = true
     }
 }

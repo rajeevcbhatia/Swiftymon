@@ -37,7 +37,7 @@ class PokemonListPresenter: PokemonListPresentable {
         pokemonListService.fetchNextPage(path: nextPagePath) { [weak self] (result) in
             self?.pokemonListView?.hideLoader()
             guard let response = try? result.get() else {
-                self?.pokemonListView?.showAlert(title: "Alert", message: "Could not fetch response")
+                self?.showAlertWithRetry()
                 self?.shouldNotifyOnSrollToEnd = true
                 return
             }
@@ -54,5 +54,12 @@ class PokemonListPresenter: PokemonListPresentable {
     
     func didSelectPokemon(id: String) {
         pokemonListView?.goToDetails(id: id)
+    }
+    
+    private func showAlertWithRetry() {
+        pokemonListView?.showRetryAlert(title: "Alert", message: "Could not fetch data. Please try again", callback: { [weak self] in
+            self?.pokemonListView?.showLoader()
+            self?.fetchNextPage()
+        })
     }
 }

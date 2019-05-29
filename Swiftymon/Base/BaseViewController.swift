@@ -34,4 +34,15 @@ class BaseViewController: UIViewController, BaseView {
         present(alertController, animated: true, completion: nil)
     }
     
+    func showRetryAlert(title: String, message: String, callback: @escaping (() -> ())) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let retryAction = UIAlertAction(title: "Retry", style: UIAlertAction.Style.cancel) { (action) in
+            callback()
+        }
+        alertController.addAction(retryAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
 }
